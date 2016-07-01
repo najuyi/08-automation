@@ -2,7 +2,23 @@
 
 //Add a document-ready event handler so that your script 
 //will apply to the loaded DOM
-
+var removeButton = function() {
+    $(this).fadeOut();
+  };
+$(document).ready(function() {
+  
+  $('circle').click(function() {
+    $(this).attr('r', $(this).attr('r') * 1.10);
+  })
+  
+  $('.removable').click(removeButton)
+  
+  $('#add').click(function() {
+    var remove = $('<p><button class="removable">Remove me!</button></p>');
+    $('#add').before(remove);
+    $('.removable').click(removeButton);
+  })
+})
 //Inside that event callback,
 
   //Assign a click listener so that the radius of the circle

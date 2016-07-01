@@ -11,7 +11,16 @@ $('form').submit(function(event) {
    console.log('Sending request to '+url);
 
    //send the AJAX request
-   $.get(url);
+   $.get(url).then(function(data) {
+       var theMovies = data.Search;
+
+       var list = $('#movies').append('<ul>');
+
+       theMovies.forEach(function(movie) {
+           list.append('<li>' + movie.Title + '</li>')
+       });
+       console.log(theMovies);
+   })
 
 
    //don't submit form as usual
