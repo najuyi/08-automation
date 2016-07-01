@@ -17,7 +17,7 @@ $('form').submit(function(event) {
        var list = $('#movies').append('<ul>');
 
        theMovies.forEach(function(movie) {
-           list.append('<li>' + movie.Title + '</li>')
+           list.append('<li><img src="'+movie.Poster+'">' + movie.Title + '</li>')
        });
        console.log(theMovies);
    })
