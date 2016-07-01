@@ -3,6 +3,7 @@
 //when the form is submitted
 $('form').submit(function(event) {
 
+    $('#movies').empty();
    //get what the user typed in
    var searchTerm = $('#movieTitle').val();
    
